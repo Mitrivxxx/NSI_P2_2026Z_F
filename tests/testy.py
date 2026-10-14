@@ -2,7 +2,7 @@ import random
 from datetime import date
 
 from bank import BankSystem
-from procesor import ZewnetrznyProcesor
+from bank.procesor import ZewnetrznyProcesor
 
 
 def _wykonaj_wywolanie(nr, opis, fn):

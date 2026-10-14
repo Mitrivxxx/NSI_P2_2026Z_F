@@ -1,7 +1,7 @@
 import random
 import time
 
-from wyjatki import ProcesorNiedostepny
+from .wyjatki import ProcesorNiedostepny
 
 
 class ZewnetrznyProcesor:

@@ -1,0 +1,15 @@
+Pokrycie metod wplac, wyplac i przelew (pytest-cov, coverage.py 7.16.2, gałęzie włączone).
+
+Polecenie: .venv/bin/pytest tests/test_operacje.py --cov=bank.system --cov-branch
+
+wplac:    instrukcje 100% (7/7), gałęzie 100% (2/2)
+wyplac:   instrukcje 100% (13/13), gałęzie 100% (8/8)
+przelew:  instrukcje 100% (17/17), gałęzie 100% (8/8)
+
+Razem: 100% (37/37 instrukcji, 18/18 gałęzi).
+
+Przegląd raportu: brak niepokrytych linii i gałęzi w tych trzech metodach
+(missing_lines puste, missing_branches puste, partial 0).
+Dodatkowych testów nie dopisano.
+
+Ponowny pomiar tym samym poleceniem: wynik bez zmian, 100% (37/37 instrukcji, 18/18 gałęzi).

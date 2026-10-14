@@ -7,10 +7,9 @@ Numer = 10 cyfr, ostatnia = (suma pierwszych 9) % 10
   123456789 -> suma 45 -> cyfra 5 -> "1234567895"
 """
 
-from pathlib import Path
-
 from bank import BankSystem
-from testy import logger_bledow
+from bank.logger import SCIEZKA_LOGU
+from tests.testy import logger_bledow
 
 
 if __name__ == "__main__":
@@ -29,7 +28,7 @@ if __name__ == "__main__":
         bank.utworz_konto("123", "X")
     except ValueError as e:
         print("OK (oczekiwane): zlapany", type(e).__name__, "-", e)
-        print("log awarii:", Path("awarie.jsonl").resolve())
+        print("log awarii:", SCIEZKA_LOGU)
 
     print("\n" + "=" * 50)
     print("30 testow logger_bledow")

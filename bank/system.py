@@ -2,10 +2,10 @@ import threading
 from datetime import date
 from decimal import Decimal, ROUND_HALF_UP
 
-from konto import Konto
-from logger import niezawodnosc_logger
-from procesor import ZewnetrznyProcesor
-from wyjatki import KontoNieIstnieje, KontoZablokowane
+from .konto import Konto
+from .logger import niezawodnosc_logger
+from .procesor import ZewnetrznyProcesor
+from .wyjatki import KontoNieIstnieje, KontoZablokowane
 
 LIMIT_DZIENNY_WYPLAT = Decimal("5000")
 

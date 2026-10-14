@@ -1,9 +1,12 @@
 import functools
 import json
 import time
+from pathlib import Path
+
+SCIEZKA_LOGU = Path(__file__).resolve().parent.parent / "logs" / "awarie.jsonl"
 
 
-def niezawodnosc_logger(log_path="awarie.jsonl"):
+def niezawodnosc_logger(log_path=None):
     """
     Dekorator: przy wyjatku zapisuje wpis awarii do pliku JSONL i ponownie
     rzuca ten sam wyjatek (nie zmieniamy zachowania funkcji).
@@ -25,7 +28,9 @@ def niezawodnosc_logger(log_path="awarie.jsonl"):
                     "komunikat": str(e),
                     "czas_do_awarii_s": time.time() - start,
                 }
-                with open(log_path, "a", encoding="utf-8") as f:
+                sciezka = Path(log_path) if log_path is not None else SCIEZKA_LOGU
+                sciezka.parent.mkdir(parents=True, exist_ok=True)
+                with open(sciezka, "a", encoding="utf-8") as f:
                     f.write(json.dumps(wpis, ensure_ascii=False) + "\n")
                 raise
         return wrapper
