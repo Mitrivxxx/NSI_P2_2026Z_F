@@ -40,6 +40,9 @@ class TestWplac:
         with pytest.raises(ValueError, match="dodatnia"):
             bank.wplac(JAN, -1)
 
+    def test_kwota_jeden(self, bank):
+        assert bank.wplac(JAN, 1) == Decimal("1001")
+
 
 class TestWyplac:
     def test_pomniejsza_saldo_i_zapisuje_historie(self, bank):
@@ -90,6 +93,9 @@ class TestWyplac:
         konto = bank._pobierz_konto(JAN)
         konto.historia.append((date.today() - timedelta(days=1), "wyplata", Decimal("5000")))
         assert bank.wyplac(JAN, 1500) == Decimal("500")
+
+    def test_kwota_jeden(self, bank):
+        assert bank.wyplac(JAN, 1) == Decimal("999")
 
 
 class TestPrzelew:
@@ -148,3 +154,45 @@ class TestPrzelew:
         bank.przelew(JAN, ANNA, 4500)
         with pytest.raises(ValueError, match="dzienny limit"):
             bank.wyplac(JAN, 501)
+
+    def test_kwota_jeden(self, bank):
+        assert bank.przelew(JAN, ANNA, 1) == Decimal("999")
+        assert bank._pobierz_konto(ANNA).saldo == Decimal("501")
+
+    def test_przelew_rowny_saldu(self, bank):
+        assert bank.przelew(JAN, ANNA, 1000) == Decimal("0")
+        assert bank._pobierz_konto(ANNA).saldo == Decimal("1500")
+
+
+class TestUtworzKonto:
+    def test_zwraca_konto(self, bank):
+        numer = "1111111119"
+        konto = bank.utworz_konto(numer, "Ewa", 50)
+        assert konto is not None
+        assert konto.numer == numer
+        assert konto.saldo == Decimal("50")
+
+    def test_zly_numer_za_krotki(self):
+        system = BankSystem()
+        with pytest.raises(ValueError, match="Nieprawidlowy"):
+            system.utworz_konto("123", "X", 0)
+
+    def test_zly_numer_nie_cyfry(self):
+        system = BankSystem()
+        with pytest.raises(ValueError, match="Nieprawidlowy"):
+            system.utworz_konto("123456789a", "X", 0)
+
+
+class TestNaliczOdsetki:
+    def test_nalicza_i_zwraca_saldo(self, bank):
+        # 12% rocznie, 1 miesiąc → +1% od 1000 = 1010.00
+        saldo = bank.nalicz_odsetki(JAN, 12, 1)
+        assert saldo == Decimal("1010.00")
+        assert bank._pobierz_konto(JAN).saldo == Decimal("1010.00")
+
+
+class TestHistoria:
+    def test_poza_zakresem_pusta(self, bank):
+        bank.wplac(JAN, 10)
+        wczoraj = date.today() - timedelta(days=1)
+        assert bank.historia_w_okresie(JAN, wczoraj, wczoraj) == []

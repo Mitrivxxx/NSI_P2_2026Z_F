@@ -27,5 +27,121 @@
         "survived": 3
       }
     }
+  },
+  {
+    "timestamp": "2026-10-25T14:32:54.502672+00:00",
+    "score": 78.46,
+    "by_file": {
+      "/home/matsma/project/NSI/bank/system.py": 78.46
+    },
+    "by_operator": {
+      "boolean": {
+        "total": 8,
+        "survived": 2
+      },
+      "comparison": {
+        "total": 30,
+        "survived": 7
+      },
+      "boundary": {
+        "total": 10,
+        "survived": 2
+      },
+      "return": {
+        "total": 12,
+        "survived": 3
+      },
+      "arithmetic": {
+        "total": 5,
+        "survived": 0
+      }
+    }
+  },
+  {
+    "timestamp": "2026-10-25T14:33:28.294632+00:00",
+    "score": 70.77,
+    "by_file": {
+      "/home/matsma/project/NSI/bank/system.py": 70.77
+    },
+    "by_operator": {
+      "boolean": {
+        "total": 8,
+        "survived": 2
+      },
+      "comparison": {
+        "total": 30,
+        "survived": 11
+      },
+      "boundary": {
+        "total": 10,
+        "survived": 2
+      },
+      "return": {
+        "total": 12,
+        "survived": 4
+      },
+      "arithmetic": {
+        "total": 5,
+        "survived": 0
+      }
+    }
+  },
+  {
+    "timestamp": "2026-10-25T14:33:55.848158+00:00",
+    "score": 73.85,
+    "by_file": {
+      "/home/matsma/project/NSI/bank/system.py": 73.85
+    },
+    "by_operator": {
+      "boolean": {
+        "total": 8,
+        "survived": 2
+      },
+      "comparison": {
+        "total": 30,
+        "survived": 10
+      },
+      "boundary": {
+        "total": 10,
+        "survived": 2
+      },
+      "return": {
+        "total": 12,
+        "survived": 3
+      },
+      "arithmetic": {
+        "total": 5,
+        "survived": 0
+      }
+    }
+  },
+  {
+    "timestamp": "2026-10-25T14:40:55.651262+00:00",
+    "score": 73.85,
+    "by_file": {
+      "/home/matsma/project/NSI/bank/system.py": 73.85
+    },
+    "by_operator": {
+      "boolean": {
+        "total": 8,
+        "survived": 2
+      },
+      "comparison": {
+        "total": 30,
+        "survived": 10
+      },
+      "boundary": {
+        "total": 10,
+        "survived": 2
+      },
+      "return": {
+        "total": 12,
+        "survived": 3
+      },
+      "arithmetic": {
+        "total": 5,
+        "survived": 0
+      }
+    }
   }
 ]
