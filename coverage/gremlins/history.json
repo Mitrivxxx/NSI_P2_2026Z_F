@@ -1,0 +1,31 @@
+[
+  {
+    "timestamp": "2026-10-19T12:40:17.890585+00:00",
+    "score": 53.85,
+    "by_file": {
+      "/home/matsma/project/NSI/bank/system.py": 53.85
+    },
+    "by_operator": {
+      "boolean": {
+        "total": 8,
+        "survived": 4
+      },
+      "comparison": {
+        "total": 30,
+        "survived": 12
+      },
+      "boundary": {
+        "total": 10,
+        "survived": 5
+      },
+      "return": {
+        "total": 12,
+        "survived": 6
+      },
+      "arithmetic": {
+        "total": 5,
+        "survived": 3
+      }
+    }
+  }
+]
