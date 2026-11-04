@@ -1,17 +1,12 @@
 # Lab 3 — testy mutacyjne
 
-Testowaliśmy `bank/system.py` zestawem `tests/test_operacje.py` (pytest-gremlins).
-
-```bash
-pytest --gremlins --gremlin-targets=bank/system.py --gremlin-report=console,html tests/test_operacje.py
-```
 
 ## 1. Mutation score przed i po
 
 | | zabite | przeżyły | score |
 |---|---:|---:|---:|
-| przed (start labu) | 35/65 | 30 | **53,85%** |
-| po (po dopisaniu testów) | 48/65 | 17 | **73,85%** |
+| przed (start labu) | 35/65 | 30 | **53%** |
+| po (po dopisaniu testów) | 48/65 | 17 | **74%** |
 
 Wzrost o ok. 20 punktów procentowych. Szczegóły: `coverage/gremlins/index.html`.
 
