@@ -1,0 +1,144 @@
+[
+  {
+    "scenariusz": "S1 wplac wspolbieznie",
+    "interwal": "domyslny (5 ms)",
+    "przejscia": 100,
+    "N": 100,
+    "sredni_czas_run_s": 0.009264,
+    "calkowity_czas_s": 1.068,
+    "przyklady_bledow": []
+  },
+  {
+    "scenariusz": "S1 wplac wspolbieznie",
+    "interwal": "agresywny (1e-06 s)",
+    "przejscia": 100,
+    "N": 100,
+    "sredni_czas_run_s": 0.079492,
+    "calkowity_czas_s": 8.098,
+    "przyklady_bledow": []
+  },
+  {
+    "scenariusz": "S2 wyplac - saldo nie spada ponizej zera",
+    "interwal": "domyslny (5 ms)",
+    "przejscia": 100,
+    "N": 100,
+    "sredni_czas_run_s": 0.031355,
+    "calkowity_czas_s": 3.256,
+    "przyklady_bledow": []
+  },
+  {
+    "scenariusz": "S2 wyplac - saldo nie spada ponizej zera",
+    "interwal": "agresywny (1e-06 s)",
+    "przejscia": 0,
+    "N": 100,
+    "sredni_czas_run_s": 0.064069,
+    "calkowity_czas_s": 6.51,
+    "przyklady_bledow": [
+      {
+        "oczekiwane": "saldo=0, sukcesy=100",
+        "otrzymane": "saldo=-120, sukcesy=112"
+      },
+      {
+        "oczekiwane": "saldo=0, sukcesy=100",
+        "otrzymane": "saldo=-110, sukcesy=111"
+      },
+      {
+        "oczekiwane": "saldo=0, sukcesy=100",
+        "otrzymane": "saldo=-130, sukcesy=113"
+      }
+    ]
+  },
+  {
+    "scenariusz": "S3 limit dzienny wyplat",
+    "interwal": "domyslny (5 ms)",
+    "przejscia": 100,
+    "N": 100,
+    "sredni_czas_run_s": 0.211854,
+    "calkowity_czas_s": 21.311,
+    "przyklady_bledow": []
+  },
+  {
+    "scenariusz": "S3 limit dzienny wyplat",
+    "interwal": "agresywny (1e-06 s)",
+    "przejscia": 12,
+    "N": 100,
+    "sredni_czas_run_s": 0.775194,
+    "calkowity_czas_s": 77.63,
+    "przyklady_bledow": [
+      {
+        "oczekiwane": "suma<=5000, sukcesy=50",
+        "otrzymane": "suma=5200, sukcesy=52"
+      },
+      {
+        "oczekiwane": "suma<=5000, sukcesy=50",
+        "otrzymane": "suma=5100, sukcesy=51"
+      },
+      {
+        "oczekiwane": "suma<=5000, sukcesy=50",
+        "otrzymane": "suma=5300, sukcesy=53"
+      }
+    ]
+  },
+  {
+    "scenariusz": "S4 przelew_zewnetrzny - saldo nie spada ponizej zera",
+    "interwal": "domyslny (5 ms)",
+    "przejscia": 0,
+    "N": 100,
+    "sredni_czas_run_s": 0.040231,
+    "calkowity_czas_s": 4.181,
+    "przyklady_bledow": [
+      {
+        "oczekiwane": "saldo=0, sukcesy=100",
+        "otrzymane": "saldo=-190, sukcesy=119"
+      },
+      {
+        "oczekiwane": "saldo=0, sukcesy=100",
+        "otrzymane": "saldo=-190, sukcesy=119"
+      },
+      {
+        "oczekiwane": "saldo=0, sukcesy=100",
+        "otrzymane": "saldo=-190, sukcesy=119"
+      }
+    ]
+  },
+  {
+    "scenariusz": "S4 przelew_zewnetrzny - saldo nie spada ponizej zera",
+    "interwal": "agresywny (1e-06 s)",
+    "przejscia": 0,
+    "N": 100,
+    "sredni_czas_run_s": 0.198997,
+    "calkowity_czas_s": 20.149,
+    "przyklady_bledow": [
+      {
+        "oczekiwane": "saldo=0, sukcesy=100",
+        "otrzymane": "saldo=-130, sukcesy=113"
+      },
+      {
+        "oczekiwane": "saldo=0, sukcesy=100",
+        "otrzymane": "saldo=-150, sukcesy=115"
+      },
+      {
+        "oczekiwane": "saldo=0, sukcesy=100",
+        "otrzymane": "saldo=-80, sukcesy=108"
+      }
+    ]
+  },
+  {
+    "scenariusz": "S5 przelew wewnetrzny (kontrola, z lockiem)",
+    "interwal": "domyslny (5 ms)",
+    "przejscia": 100,
+    "N": 100,
+    "sredni_czas_run_s": 0.013439,
+    "calkowity_czas_s": 1.54,
+    "przyklady_bledow": []
+  },
+  {
+    "scenariusz": "S5 przelew wewnetrzny (kontrola, z lockiem)",
+    "interwal": "agresywny (1e-06 s)",
+    "przejscia": 100,
+    "N": 100,
+    "sredni_czas_run_s": 0.027037,
+    "calkowity_czas_s": 2.934,
+    "przyklady_bledow": []
+  }
+]
